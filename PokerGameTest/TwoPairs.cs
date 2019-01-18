@@ -7,7 +7,7 @@ namespace PokerGameTest
     {
         public override bool match(List<Card> cardList)
         {
-           return cardList.GroupBy(x=>x.AlphabetNumber).Count() ==3;
+            return cardList.GroupBy(x => x.AlphabetNumber).Count() == 3;
         }
 
         public override string getName()

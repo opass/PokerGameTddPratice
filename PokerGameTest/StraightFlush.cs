@@ -2,7 +2,6 @@ using System.Collections.Generic;
 
 namespace PokerGameTest
 {
-    
     public class StraightFlush : HandKind
     {
         public static string Name { get; } = "Flush Straight";

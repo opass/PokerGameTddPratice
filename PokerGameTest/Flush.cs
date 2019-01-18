@@ -14,6 +14,5 @@ namespace PokerGameTest
         {
             return "Flush";
         }
-        
     }
 }

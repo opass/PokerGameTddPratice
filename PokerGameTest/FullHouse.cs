@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PokerGameTest
 {
-    public class FullHouse: HandKind
+    public class FullHouse : HandKind
     {
         public override bool match(List<Card> cardList)
         {

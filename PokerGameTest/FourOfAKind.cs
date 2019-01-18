@@ -5,7 +5,7 @@ namespace PokerGameTest
 {
     public class FourOfAKind : HandKind
     {
-        public static string Name { get; } = "Four of a Kind";
+        private static string Name { get; } = "Four of a Kind";
 
         public override bool match(List<Card> cardList)
         {
@@ -17,6 +17,5 @@ namespace PokerGameTest
         {
             return Name;
         }
-
     }
 }
