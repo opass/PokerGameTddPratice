@@ -14,12 +14,18 @@ namespace PokerGameTest
                 get { return "S2,S3,S4,S5,S6"; }
             }
         }
+        
 
         public static class FourOfAKind
         {
             public static string NormalHand
             {
                 get { return "S2,H2,D2,S2,SA"; }
+            }
+
+            public static string Name
+            {
+                get { return "Four of a Kind"; }
             }
         }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PokerGameTest
@@ -76,14 +77,15 @@ namespace PokerGameTest
         [TestMethod]
         public void FlushStraight_BiggerThan_EveryOther()
         {
-            DealPlayerOneHand(TestHandKind.FourOfAKind.NormalHand);
             DealPlayerTwoHand(TestHandKind.FlushStraight.NormalHand);
+
+            DealPlayerOneHand(TestHandKind.FourOfAKind.NormalHand);
             ResultShouldBe(TestHandKind.FlushStraight.Name, "Tom");
             
             DealPlayerOneHand(TestHandKind.FullHouse.NormalHand);
             ResultShouldBe(TestHandKind.FlushStraight.Name, "Tom");
             
-            DealPlayerOneHand(TestHandKind.FlushStraight.NormalHand);
+            DealPlayerOneHand(TestHandKind.Flush.NormalHand);
             ResultShouldBe(TestHandKind.FlushStraight.Name, "Tom");
             
             DealPlayerOneHand(TestHandKind.Straight.NormalHand);
@@ -98,9 +100,35 @@ namespace PokerGameTest
             DealPlayerOneHand(TestHandKind.OnePair.NormalHand);
             ResultShouldBe(TestHandKind.FlushStraight.Name, "Tom");
             
-            DealPlayerOneHand(TestHandKind.HighCard.NormalHand);
-            ResultShouldBe(TestHandKind.FlushStraight.Name, "Tom");
+            
         }
+        [TestMethod]
+        [Ignore]
+        public void FourOfAKind_BiggerThan_Others()
+        {
+            
+            DealPlayerTwoHand(TestHandKind.FourOfAKind.NormalHand);
+            
+            DealPlayerOneHand(TestHandKind.FullHouse.NormalHand);
+            ResultShouldBe(TestHandKind.FourOfAKind.Name, "Tom");
+            
+            DealPlayerOneHand(TestHandKind.Flush.NormalHand);
+            ResultShouldBe(TestHandKind.FourOfAKind.Name, "Tom");
+            
+            DealPlayerOneHand(TestHandKind.Straight.NormalHand);
+            ResultShouldBe(TestHandKind.FourOfAKind.Name, "Tom");
+            
+            DealPlayerOneHand(TestHandKind.ThreeOfAKind.NormalHand);
+            ResultShouldBe(TestHandKind.FourOfAKind.Name, "Tom");
+            
+            DealPlayerOneHand(TestHandKind.TwoPairs.NormalHand);
+            ResultShouldBe(TestHandKind.FourOfAKind.Name, "Tom");
+            
+            DealPlayerOneHand(TestHandKind.OnePair.NormalHand);
+            ResultShouldBe(TestHandKind.FourOfAKind.Name, "Tom");
+            
+        }
+       
 
         private void DealPlayerOneHand(string hand)
         {
